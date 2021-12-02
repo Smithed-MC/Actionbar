@@ -1,0 +1,58 @@
+{
+  "criteria": {
+    "used_bed": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$smithed.actionbar.major"
+              },
+              "score": "load.status"
+            },
+            "range": 0
+          },
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$smithed.actionbar.minor"
+              },
+              "score": "load.status"
+            },
+            "range": 0
+          },
+          {
+            "condition": "minecraft:value_check",
+            "value": {
+              "type": "minecraft:score",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$smithed.actionbar.patch"
+              },
+              "score": "load.status"
+            },
+            "range": 1
+          }
+        ],
+        "location": {
+          "block": {
+            "tag": "minecraft:beds",
+            "state": {
+              "occupied": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "smithed:actionbar/impl/__version__/vanilla/used_bed"
+  }
+}
