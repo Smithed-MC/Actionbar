@@ -27,10 +27,10 @@ function #smithed:actionbar/message
 
 Priorities are set via specific strings.
 
-	- `override`: This is the highest priority and will always override the current message, no matter what.
-	- `notification`: This is for brief, non-repeating, notification type messages, such as the vanilla "You can't sleep now" message.
-	- `conditional`: This should be used for any message which will display constantly on a condition. A good example is displaying a compass HUD while you hold a compass or showcasing the amount of XP in a nearby tank. This doesn't include any persistent messages which toggle via a config option!
-	- `persistent`: This is the lowest priority message and is designated for messages which always displays (or displays continously if a config value is set). You can think of this as a custom ui display such as in Manic or even the Vanilla Tweaks coordinate HUD which always displays.
+- `override`: This is the highest priority and will always override the current message, no matter what.
+- `notification`: This is for brief, non-repeating, notification type messages, such as the vanilla "You can't sleep now" message.
+- `conditional`: This should be used for any message which will display constantly on a condition. A good example is displaying a compass HUD while you hold a compass or showcasing the amount of XP in a nearby tank. This doesn't include any persistent messages which toggle via a config option!
+- `persistent`: This is the lowest priority message and is designated for messages which always displays (or displays continously if a config value is set). You can think of this as a custom ui display such as in Manic or even the Vanilla Tweaks coordinate HUD which always displays.
 
 Additionally, you can also set a `freeze` field in the storage space. This will deteremine how long your message should be protected. By default, when using `notification`, this field is set to 20. Otherwise, this field is set to 2 (consider this 1, but for optimization, it's 2).
 
@@ -44,4 +44,4 @@ The freeze value has a min value of 0 and a max value of 50.
 
 This pack also reimplements as many vanilla actionbars as reasonable. As of now, this includes:
 
-	- Not being able to sleep in a bed
+- Not being able to sleep in a bed
