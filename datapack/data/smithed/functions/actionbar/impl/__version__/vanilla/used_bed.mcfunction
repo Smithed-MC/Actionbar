@@ -1,15 +1,9 @@
-advancement revoke @s only smithed:actionbar/__version__/vanilla/used_bed
+advancement revoke @s only smithed:actionbar/__version__/vanilla/used_bed requirement
 
-# default
-data modify storage smithed.actionbar:input message set value {json: '{"translate":"block.minecraft.bed.obstructed"}', priority: 'notification'}
+scoreboard players set @s smithed.actionbar.priority 1
+scoreboard players set @s smithed.actionbar.freeze 20
+scoreboard players set @s[advancements={smithed:actionbar/__version__/vanilla/slept_in_bed={requirement=true}}] smithed.actionbar.sleeping 1
 
-# check hostiles
-execute if entity @e[type=#smithed:actionbar/__version__/vanilla/hostiles,distance=..8] run data modify storage smithed:actionbar/storage temp.message.json set value '{"translate":"block.minecraft.bed.not_safe"}'
+execute if score @s smithed.actionbar.sleeping matches 1.. run schedule function smithed:actionbar/__version__/vanilla/tick 1t replace 
 
-execute if entity @e[type=#smithed:actionbar/__version__/vanilla/neutral_hostiles,predicate=smithed:actionbar/__version__/vanilla/anger_time,distance=..8] run data modify storage smithed:actionbar/storage temp.message.json set value '{"translate":"block.minecraft.bed.not_safe"}'
-
-# check time of day
-execute if predicate smithed:actionbar/__version__/vanilla/no_sleep run data modify storage smithed.actionbar:input message.json set value '{"translate":"block.minecraft.bed.no_sleep"}'
-
-# output ;)
-function #smithed:actionbar/message
+advancement revoke @s only smithed:actionbar/__version__/vanilla/slept_in_bed requirement

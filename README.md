@@ -5,7 +5,7 @@ This library helps manage usage of the actionbar by aggregating usage by priorit
 
 ## Usage
 
-Instead of using /title to display the message, take the original string you were going to display and use it in this command:
+Instead of using `/title` to display the message, take the original string you were going to display and use it in this command:
 
 -> Persistent Compass HUD
 
@@ -16,7 +16,7 @@ data modify storage smithed.actionbar:message input set value {raw:'X Y Z', prio
 -> Notification
 
 ```mcfunction
-data modify storage smithed.actionbar:message input set value {raw:'You cannot complete this action!', priority: 'notification'}
+data modify storage smithed.actionbar:message input set value {json:'{"text":"You cannot complete this action!", "color": "red"}', priority: 'notification'}
 ```
 
 Once you have the `storage` set how you like, you can run the public api function to process the message.
